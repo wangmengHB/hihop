@@ -1,0 +1,37 @@
+{
+  "name": "@mengd/cli",
+  "version": "0.0.1-rc.1",
+  "description": "node tools used to build react/vue project",
+  "main": "./bin/cli.js",
+  "bin": {
+    "mend": "./bin/cli.js"
+  },
+  "files": [
+    "bin",
+    "lib"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wangmengHB/mengd-cli.git"
+  },
+  "keywords": [
+    "react",
+    "vue"
+  ],
+  "author": "Meng Wang <wangmeng_hb@163.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wangmengHB/mengd-cli/issues"
+  },
+  "homepage": "https://github.com/wangmengHB/mengd-cli#readme",
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "commander": "^2.20.0",
+    "didyoumean": "^1.2.1",
+    "minimist": "^1.2.0",
+    "semver": "^6.3.0"
+  }
+}
