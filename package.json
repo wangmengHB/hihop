@@ -1,10 +1,9 @@
 {
-  "name": "@mengd/cli",
+  "name": "hihop",
   "version": "0.0.1-rc.1",
   "description": "node tools used to build react/vue project",
-  "main": "./bin/cli.js",
   "bin": {
-    "mend": "./bin/cli.js"
+    "hihop": "./bin/cli.js"
   },
   "files": [
     "bin",
@@ -15,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wangmengHB/mengd-cli.git"
+    "url": "git+https://github.com/wangmengHB/hihop.git"
   },
   "keywords": [
     "react",
@@ -24,9 +23,9 @@
   "author": "Meng Wang <wangmeng_hb@163.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/wangmengHB/mengd-cli/issues"
+    "url": "https://github.com/wangmengHB/hihop/issues"
   },
-  "homepage": "https://github.com/wangmengHB/mengd-cli#readme",
+  "homepage": "https://github.com/wangmengHB/hihop#readme",
   "dependencies": {
     "chalk": "^2.4.2",
     "commander": "^2.20.0",

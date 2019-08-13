@@ -1,11 +1,31 @@
+#!/usr/bin/env node
+
 const chalk = require('chalk');
 const semver = require('semver');
 const program = require('commander')
 const didYouMean = require('didyoumean');
 const minimist = require('minimist');
 
+// commander passes the Command object itself as options,
+// extract only actual options into a fresh object.
+function cleanArgs (cmd) {
+  const args = {}
+  cmd.options.forEach(o => {
+    const key = camelize(o.long.replace(/^--/, ''))
+    // if an option is not present and Command has a method with the same name
+    // it should not be copied
+    if (typeof cmd[key] !== 'function' && typeof cmd[key] !== 'undefined') {
+      args[key] = cmd[key]
+    }
+  })
+  return args
+}
+
+
 // Setting edit distance to 60% of the input string's length
-didYouMean.threshold = 0.6
+didYouMean.threshold = 0.6;
+
+console.log('hello');
 
 var input = 'insargrm'
 var list = ['facebook', 'twitter', 'instagram', 'linkedin'];
@@ -20,9 +40,9 @@ program
   .version(require('../package').version)
   .usage('<command> [options]');
 
-  program
-  .command('create <app-name>')
-  .description('create a new project powered by vue-cli-service')
+program
+  .command('create <project-name>')
+  .description('create a new project powered by mengd-cli')
   .option('-p, --preset <presetName>', 'Skip prompts and use saved or remote preset')
   .option('-d, --default', 'Skip prompts and use default preset')
   .option('-i, --inlinePreset <json>', 'Skip prompts and use inline JSON string as preset')
@@ -54,6 +74,17 @@ program
 // add some useful info on help
 program.on('--help', () => {
   console.log()
-  console.log(`  Run ${chalk.cyan(`vue <command> --help`)} for detailed usage of given command.`)
+  console.log(`  Run ${chalk.cyan(`mengd <command> --help`)} for detailed usage of given command.`)
   console.log()
 });
+
+program
+  .option('--no-sauce', 'Remove sauce')
+  .parse(process.argv);
+ 
+console.log('you ordered a pizza');
+if (program.sauce) {
+  console.log('  with sauce');
+} else {
+  console.log(' without sauce');
+} 
